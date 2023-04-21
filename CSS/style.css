@@ -220,7 +220,11 @@ h3{
 }
 .nav-list{
   display: flex;
-  column-gap: 3rem;
+  /* column-gap: 3rem; */
+}
+
+.nav-list :not(:first-child){
+  margin-left: 3rem;
 }
 .nav-link{
   font-weight: var(--font-medium);
@@ -1096,6 +1100,11 @@ h3{
     flex: 0 0 100%;
     max-width: 100%;
   }
+
+  .nav-list :not(:first-child){
+    margin-left: 1.5rem;
+  }
+
   .about-img{
     text-align: center;
     margin-bottom: var(--m-2-5);
@@ -1126,7 +1135,7 @@ h3{
     width: 58vw;
   }
 }
-@media only screen and (max-width:768px)
+@media only screen and (max-width:788px)
 {
   body{
     margin: var(--header-height) 0 0 0;
