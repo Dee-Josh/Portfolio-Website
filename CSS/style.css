@@ -248,6 +248,7 @@ h3{
 .change-theme{
   font-size: 1.15rem;
   cursor: pointer;
+  margin-left: 15px;
 }
 .nav-toggle{
   font-size: 1.2rem;
