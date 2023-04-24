@@ -280,6 +280,7 @@ h3{
   justify-content: center;
   height: 100vh;
   min-height: 100vh;
+  border-bottom: .5px solid var(--color-primary);
 }
 .home .intro{
   max-width: 540px;
@@ -505,11 +506,13 @@ h3{
   left: var(--m-0-5);
   background-color: var(--color-primary);
   top: 0;
-  margin-top: 5px;
+  margin-top: 4;
 }
 .timeline .timeline-icon{
   width: 1.5rem;
   position: absolute;
+  z-index: 10;
+  background-color: var(--color-white);
   left: -0.25rem;
   top: 0;
   font-size: 1.5rem;
@@ -1151,10 +1154,15 @@ h3{
     flex-direction: column;
     row-gap: 1.5rem;
   }
+
+  .nav-list :not(:first-child){
+    margin-left: 0rem;
+  }
   .nav-menu{
     position: fixed;
     background: var(--color-white);
-    width: 80%;
+    width: 70%;
+    max-width: 350px;
     height: 100%;
     top: 0;
     right: -100%;

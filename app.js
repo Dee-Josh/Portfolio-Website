@@ -238,7 +238,15 @@ const filterContainer = document.querySelector(".portfolio-filter-inner"),
 
 var counter = 1;
 setInterval(() => {
-    document.getElementById("radio" + counter).checked = true;
+    for (let i = 1; i < 4; i++) {
+        if (document.getElementById("radio" + i).checked === true) {
+            i++;
+            counter = i;
+            console.log(counter);
+        }
+        
+    }
+     document.getElementById("radio" + counter).checked = true;
     counter++;
 
     if(counter > 4){
