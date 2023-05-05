@@ -110,7 +110,7 @@ colorPalette.forEach(color => {
 
         if(color.classList.contains('color-1'))
         {
-            primaryHue = 252;
+            primaryHue = 278;
         }
         else if(color.classList.contains('color-2'))
         {
@@ -149,8 +149,12 @@ Bg1.addEventListener('click', () => {
     // Remove active from the others
     Bg2.classList.remove('active');
     Bg3.classList.remove('active');
-    // Remove customized changes from local storage
-    window.location.reload();
+    
+    darkColorLightness = '17%';
+    whiteColorLightness = '100%';
+    lightColorLightness = '92%';
+    changeBG();
+
 })
 Bg2.addEventListener('click', () => {
     darkColorLightness = '95%';
@@ -262,7 +266,7 @@ const home = document.getElementById("home"),
 about = document.getElementById("about"),
 experinece = document.getElementById("experience"),
 portfolio = document.getElementById("portfolio"),
-podcast = document.getElementById("podcast"),
+podcast = document.getElementById("portfolio-display"),
 contact = document.getElementById("contact");
 
 const navLink = document.querySelectorAll(".nav-link")
@@ -275,6 +279,7 @@ function isAtTheTop(element){
     );
 }
 
+const bac2top = document.querySelector(".back-to-top");
 
 // theContainer.top >=0 && theContainer.left>=0 && theContainer.bottom<= (window.innerHeight || documentElement.clientHeight) && theContainer.right<=(window.innerWidth || documentElement.clientWidth)
 
@@ -284,31 +289,37 @@ setInterval(() => {
             link.classList.remove("active-link")
         })
         navLink[0].classList.add("active-link");
+        bac2top.style.display = "none";
     } else if(isAtTheTop(about)){
         navLink.forEach(link=>{
             link.classList.remove("active-link")
         })
         navLink[1].classList.add("active-link");
+        bac2top.style.display = "flex";
     }else if(isAtTheTop(experinece)){
         navLink.forEach(link=>{
             link.classList.remove("active-link")
         })
         navLink[2].classList.add("active-link");
+        bac2top.style.display = "flex";
     }else if(isAtTheTop(portfolio)){
         navLink.forEach(link=>{
             link.classList.remove("active-link")
         })
         navLink[3].classList.add("active-link");
+        bac2top.style.display = "flex";
     }else if(isAtTheTop(podcast)){
         navLink.forEach(link=>{
             link.classList.remove("active-link")
         })
         navLink[4].classList.add("active-link");
+        bac2top.style.display = "flex";
     }else if(isAtTheTop(contact)){
         navLink.forEach(link=>{
             link.classList.remove("active-link")
         })
         navLink[5].classList.add("active-link");
+        bac2top.style.display = "flex";
     }
 
 
