@@ -1302,7 +1302,7 @@ h3{
   color: var(--color-primary);
   font-size: 23px;
   position: fixed;
-  bottom: 25px;
+  bottom: 15px;
   right: 15px;
   border: 1px solid var(--color-primary);
   border-radius: 300px;
