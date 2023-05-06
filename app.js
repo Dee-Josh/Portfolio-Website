@@ -2,15 +2,20 @@ console.log("Working");
 
 const navMenu = document.getElementById("nav-menu"),
       navToggle = document.getElementById("nav-toggle"),
-      navClose = document.getElementById("nav-close")
+      navClose = document.getElementById("nav-close");
+
+let clicked = false;
 
 /*=============== SHOW MENU ===============*/
 // Validates if constant exists
 if(navToggle)
 {
     navToggle.addEventListener('click', () => {
-        navMenu.classList.add("show-menu")
-    })
+        navMenu.classList.add("show-menu");
+        setTimeout(() => {
+            clicked = true;
+        }, 100);
+    });
 }
 
 /*============== MENU HIDDEN ===============*/
@@ -18,8 +23,9 @@ if(navToggle)
 if(navClose)
 {
     navClose.addEventListener('click', () => {
-        navMenu.classList.remove("show-menu")
-    })
+        navMenu.classList.remove("show-menu");
+        clicked = false;
+    });
 }
 
 /*=============== REMOVE MENU MOBILE ===============*/
@@ -31,7 +37,14 @@ function linkAction()
     // When we click on each nav link, we remove the show menu class
     navMenu.classList.remove("show-menu")
 }
-navLinks.forEach(n => n.addEventListener('click', linkAction))
+navLinks.forEach(n => n.addEventListener('click', linkAction));
+document.body.addEventListener("click", ()=>{
+    if (clicked) {
+        linkAction();
+        clicked = false;
+    }
+})
+
 
 
 // Test Begins
@@ -144,6 +157,7 @@ const changeBG = () => {
     root.style.setProperty('--dark-color-lightness', darkColorLightness);
 }
 Bg1.addEventListener('click', () => {
+    header.style.filter = 'brightness(0.8)';
     // Add active class
     Bg1.classList.add('active');
     // Remove active from the others
@@ -157,6 +171,7 @@ Bg1.addEventListener('click', () => {
 
 })
 Bg2.addEventListener('click', () => {
+    header.style.filter = 'brightness(0.8)';
     darkColorLightness = '95%';
     whiteColorLightness = '20%';
     lightColorLightness = '15%';
@@ -169,6 +184,7 @@ Bg2.addEventListener('click', () => {
     changeBG();
 })
 Bg3.addEventListener('click', () => {
+    header.style.filter = 'contrast(0.8)';
     darkColorLightness = '95%';
     whiteColorLightness = '10%';
     lightColorLightness = '0%';
@@ -240,23 +256,43 @@ const filterContainer = document.querySelector(".portfolio-filter-inner"),
 
 // for auto slider
 
-var counter = 1;
-setInterval(() => {
-    for (let i = 1; i < 4; i++) {
+const radioBoxes = document.querySelectorAll(".radio-btn");
+
+let counter;
+let imageSlider;
+
+function slideImage() {
+    counter = 1;
+
+    for (let i = 1; i < 5; i++) {
         if (document.getElementById("radio" + i).checked === true) {
             i++;
             counter = i;
-            console.log(counter);
         }
         
     }
-     document.getElementById("radio" + counter).checked = true;
+    document.getElementById("radio" + counter).checked = true;
     counter++;
 
-    if(counter > 4){
+    if(counter > 5){
         counter = 1;
     }
-}, 5000);
+}
+
+
+imageSlider = setInterval(slideImage, 5000);
+
+radioBoxes.forEach((radioBox)=>{
+    radioBox.addEventListener('click', ()=>{
+        clearInterval(imageSlider);
+        setTimeout(() => {
+            console.log("hfhhhd");
+            imageSlider = setInterval(slideImage, 5000);
+        }, 3000);
+    })
+})
+
+
 
 
 // To Check when a container is now at the top

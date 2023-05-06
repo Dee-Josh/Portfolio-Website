@@ -204,10 +204,13 @@ h3{
 .header{
   width: 100%;
   background-color: var(--color-light);
+  /* opacity: .95; */
+  filter: brightness(.8);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
+  /* border-bottom: 1px solid var(--color-primary); */
 }
 
 /******* NAV *******/
@@ -238,6 +241,7 @@ h3{
 }
 
 .nav-menu{
+  filter: contrast(1);
   margin-left: auto;
 }
 
@@ -1311,6 +1315,7 @@ h3{
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 100;
 }
 
 /******* Media Queries *******/
@@ -1403,7 +1408,7 @@ h3{
     background: var(--color-white);
     width: 70%;
     max-width: 350px;
-    height: 100%;
+    height: 100vh;
     top: 0;
     right: -100%;
     padding: 4rem 0 0 3rem;
@@ -1556,7 +1561,6 @@ h3{
    display: flex;
    justify-content: center;
    z-index: 1;
-
 }
 
 
@@ -1594,6 +1598,11 @@ h3{
 
 #radio4:checked ~ .first{
   margin-left: -60%;
+}
+
+
+#radio5:checked ~ .first{
+  margin-left: -80%;
 }
 
 
@@ -1638,5 +1647,10 @@ h3{
 
 
 #radio4:checked ~ .navigation-auto .auto-btn4{
+ background-color: var(--color-primary);
+}
+
+
+#radio5:checked ~ .navigation-auto .auto-btn5{
  background-color: var(--color-primary);
 }
