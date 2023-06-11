@@ -5,8 +5,7 @@
 {
   --header-height: 3.5rem; /*56px*/
 
-  /******* Colors *******/
-  /*Color mode HSL(hue, saturation, lightness)*/
+  /******* Colors *******/  /*Color mode HSL(hue, saturation, lightness)*/
   --primary-color-hue: 278;
   --dark-color-lightness:17%;
   --light-color-lightness:92%;
@@ -14,7 +13,7 @@
 
   --color-white: hsl(252, 30%, var(--white-color-lightness));
   --color-light: hsl(252, 30%, var(--light-color-lightness));
-  --color-gray: hsl(252, 15%, 65%);
+  --color-gray: rgb(158, 152, 179);
   /* --color-primary: hsl(278, 73%, 47%); */
   --color-primary: hsl(var(--primary-color-hue), 73%, 47%);
   --color-dark: hsl(252, 30%, var(--dark-color-lightness));
@@ -211,6 +210,11 @@ h3{
   left: 0;
   z-index: 100;
   /* border-bottom: 1px solid var(--color-primary); */
+  transition: all .5s;
+}
+
+.header:hover{
+  filter: brightness(.9) !important;
 }
 
 /******* NAV *******/
