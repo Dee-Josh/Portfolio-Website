@@ -326,6 +326,11 @@ h3{
   border-bottom: .5px solid var(--color-primary);
 }
 
+.info-text{
+  font-weight: bold;
+  font-size: var(--h3-font-size);
+}
+
 .home .intro{
   max-width: 540px;
   text-align: center;

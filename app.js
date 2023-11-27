@@ -362,5 +362,69 @@ setInterval(() => {
 
 }, 100);
 
+// Updating my titles
 
+const title = document.querySelector('.info-text');
 
+let text1 = "Software Developer";
+let text2 = "Frontend Web Developer";
+let text3 = "Mobile App Developer";
+let myTitle1 = [];
+let myTitle2 = [];
+let myTitle3 = [];
+
+let i = 0;
+let titleOne = true;
+let titleTwo = false;
+let titleThree = false;
+
+setInterval(() => {
+    t1();
+    t2();       
+    t3();
+}, 105);
+
+const t1 =()=>{
+    if (titleOne) {
+        myTitle3 = [];
+        myTitle1[i] = text1.charAt(i); 
+        title.textContent =myTitle1.join("");
+        i++;     
+        console.log(i);
+        if (i > 30) {
+            titleOne=false;
+            titleTwo=true;
+            i = 0;
+            
+        }
+    }
+    
+}
+
+const t2 =()=>{
+    if (titleTwo) { 
+        myTitle1 = [];
+        myTitle2[i] = text2.charAt(i); 
+        title.textContent =myTitle2.join("");
+        i++; 
+        if (i > 34) {
+            titleTwo=false;
+            titleThree=true;
+            i = 0;
+        }
+    }
+}
+
+const t3 =()=>{
+    if (titleThree) {
+        myTitle2 = [];
+        myTitle3[i] = text3.charAt(i); 
+        title.textContent =myTitle3.join("");
+        i++;     
+        if (i > 44) {
+            titleOne=true;
+            titleThree=false
+            i = 0;
+        }
+    }
+}
